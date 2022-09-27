@@ -24,7 +24,8 @@ class RegisterContr extends Register
             // email taken
             // header("location: ../index.php?error=emailtaken");
             $this->location = "index.php?error=emailtaken";
-            exit();
+            // exit();
+            return;
         }
 
         $this->setUser($this->fullName, $this->email, $this->password, $this->dob, $this->phone);

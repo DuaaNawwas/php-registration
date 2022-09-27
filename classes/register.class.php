@@ -18,7 +18,8 @@ class Register extends Dbh
             $stmt = null;
             // header("location: ../index.php?error=stmtfailed");
             $this->location = "index.php?error=stmtfailed";
-            exit();
+            // exit();
+            return;
         }
 
 
@@ -34,7 +35,8 @@ class Register extends Dbh
             $stmt = null;
             // header("location: ../index.php?error=stmtfailed");
             $this->location = "index.php?error=stmtfailed";
-            exit();
+            // exit();
+            return;
         }
 
 
@@ -56,7 +58,8 @@ class Register extends Dbh
             $stmt = null;
             // header("location: ../index.php?error=stmtfailed");
             $this->location = "index.php?error=stmtfailed";
-            exit();
+            // exit();
+            return;
         }
 
 

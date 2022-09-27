@@ -75,7 +75,7 @@ loginForm.addEventListener("submit", function (e) {
 	if (isFormValid) {
 		const emailLoginValue = emailLogin.value;
 		const passwordLoginValue = passwordLogin.value;
-
+		const Err = document.getElementById("err");
 		// console.log(fullNameTrimmed);
 		fetch("http://localhost/php-registration/includes/login.inc.php", {
 			method: "POST",
@@ -85,6 +85,12 @@ loginForm.addEventListener("submit", function (e) {
 			body: `emailLoginValue=${emailLoginValue}&passwordLoginValue=${passwordLoginValue}`,
 		})
 			.then((response) => response.text())
-			.then((res) => (location.href = res));
+			.then((res) => {
+				if (res == "welcome.php" || res == "admin.php") {
+					location.href = res;
+				} else {
+					alert(res);
+				}
+			});
 	}
 });

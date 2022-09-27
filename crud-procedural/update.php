@@ -95,7 +95,7 @@ $user =   $stmt->fetch();
                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                 <div class="form-outline flex-fill mb-0">
                     <label class="form-label" for="role">Role</label>
-                    <input type="text" name="role" id="role" class="form-control" value="user" />
+                    <input type="text" name="role" id="role" class="form-control" value="<?php echo $user['role']; ?>" />
                     <small></small>
                 </div>
             </div>

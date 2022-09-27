@@ -15,7 +15,12 @@ $login = new LoginContr($email, $password);
 // run error handlers and user login
 $login->loginUser();
 
-// Send the user to welcome page
-// use echo to send it as a response to js
+if ($login->err) {
+    echo $login->err;
+} else {
 
-echo $login->location;
+    // Send the user to welcome page
+    // use echo to send it as a response to js
+
+    echo $login->location;
+}

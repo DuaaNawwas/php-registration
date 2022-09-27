@@ -169,6 +169,7 @@
                                                         <small></small>
                                                     </div>
                                                 </div>
+                                                <small id="err"></small>
 
                                                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                     <button type="submit" id="loginBtn" class="btn btn-md" style="

@@ -4,6 +4,7 @@
 class Login extends Dbh
 {
     public $location;
+    public $err;
     protected $admin;
 
     protected function getUser($email, $password)
@@ -15,15 +16,17 @@ class Login extends Dbh
             $stmt = null;
             // header("location: ../welcome.php?error=stmtfailed");
             $this->location = "welcome.php?error=stmtfailed";
-            exit();
+            // exit();
+            return;
         }
 
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
             // header("location: ../welcome.php?error=usernotfound");
-            $this->location = "welcome.php?error=usernotfound";
-            exit();
+            $this->err = "email not found";
+            // exit();
+            return;
         }
 
         $userInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,8 +35,9 @@ class Login extends Dbh
         if ($checkPwd == false) {
             $stmt = null;
             // header("location: ../welcome.php?error=wrongpassword");
-            $this->location = "welcome.php?error=wrongpassword";
-            exit();
+            $this->err = "wrong password";
+            // exit();
+            return;
         } else {
 
 
@@ -44,8 +48,9 @@ class Login extends Dbh
             if (!$stmt1->execute(array($email))) {
                 $stmt1 = null;
                 // header("location: ../welcome.php?error=stmtfailed");
-                // $this->location = "welcome.php?error=stmtfailed";
-                exit();
+                $this->location = "welcome.php?error=stmtfailed";
+                // exit();
+                return;
             }
 
 
