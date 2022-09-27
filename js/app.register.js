@@ -2,6 +2,7 @@ const fname = document.getElementById("fname-registration");
 const sname = document.getElementById("sname-registration");
 const tname = document.getElementById("tname-registration");
 const lname = document.getElementById("lname-registration");
+// const image = document.getElementById("image-registration");
 const email = document.getElementById("email-registration");
 const phone = document.getElementById("phone-registration");
 const dob = document.getElementById("dob-registration");
@@ -180,6 +181,34 @@ const checkConfirmPassword = () => {
 
 	return valid;
 };
+
+// image.addEventListener("change", () => {
+// 	upload_image(image.files[0]);
+// });
+
+// const upload_image = (file) => {
+// 	// check file type
+
+// 	if (!["image/jpeg", "image/png"].includes(file.type)) {
+// 		showError(image, "Only .jpg and .png image are allowed");
+
+// 		document.getElementsById("image").value = "";
+
+// 		return;
+// 	}
+
+// 	// check file size (< 2MB)
+// 	if (file.size > 2 * 1024 * 1024) {
+// 		showError(image, "File must be less than 2 MB");
+
+// 		document.getElementsById("image").value = "";
+// 		return;
+// 	}
+
+// 	const form_data = new FormData();
+
+// 	form_data.append("image", file);
+// };
 
 form.addEventListener("submit", function (e) {
 	// prevent the form from submitting

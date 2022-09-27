@@ -5,7 +5,7 @@ $email = $_POST['emailValue'];
 $phone = $_POST['phoneValue'];
 $dob = $_POST['dobValue'];
 $password = $_POST['passwordValue'];
-
+// $image = $_FILES['image']['name'];
 
 // instantiate RegisterContr class
 include "../classes/dbh.class.php";
