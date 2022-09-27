@@ -3,10 +3,10 @@ const passwordLogin = document.getElementById("password-login");
 const loginForm = document.getElementById("loginForm");
 
 // function to check if field empty
-const isRequired = (value) => (value === "" ? false : true);
+const isRequired1 = (value) => (value === "" ? false : true);
 
 // function to show error
-const showError = (input, message) => {
+const showError1 = (input, message) => {
 	// get the form-field element
 	const formField = input.parentElement;
 	// add the error class
@@ -19,7 +19,7 @@ const showError = (input, message) => {
 };
 
 // function to show success
-const showSuccess = (input) => {
+const showSuccess1 = (input) => {
 	// get the form-field element
 	const formField = input.parentElement;
 
@@ -33,28 +33,28 @@ const showSuccess = (input) => {
 };
 
 // function to validate email
-const checkEmail = () => {
+const checkEmail1 = () => {
 	let valid = false;
 	const emailTrimmed = emailLogin.value.trim();
-	if (!isRequired(emailTrimmed)) {
-		showError(emailLogin, "Email cannot be blank.");
+	if (!isRequired1(emailTrimmed)) {
+		showError1(emailLogin, "Email cannot be blank.");
 	} else {
-		showSuccess(emailLogin);
+		showSuccess1(emailLogin);
 		valid = true;
 	}
 	return valid;
 };
 
 // function to validate password
-const checkPassword = () => {
+const checkPassword1 = () => {
 	let valid = false;
 
 	const passwordTrimmed = passwordLogin.value.trim();
 
-	if (!isRequired(passwordTrimmed)) {
-		showError(passwordLogin, "Password cannot be blank.");
+	if (!isRequired1(passwordTrimmed)) {
+		showError1(passwordLogin, "Password cannot be blank.");
 	} else {
-		showSuccess(passwordLogin);
+		showSuccess1(passwordLogin);
 		valid = true;
 	}
 
@@ -66,8 +66,8 @@ loginForm.addEventListener("submit", function (e) {
 	e.preventDefault();
 
 	// validate forms
-	let isEmailValid = checkEmail(),
-		isPasswordValid = checkPassword();
+	let isEmailValid = checkEmail1(),
+		isPasswordValid = checkPassword1();
 
 	let isFormValid = isEmailValid && isPasswordValid;
 

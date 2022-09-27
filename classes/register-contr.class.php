@@ -23,7 +23,7 @@ class RegisterContr extends Register
         if ($this->emailTakenCheck() == false) {
             // email taken
             // header("location: ../index.php?error=emailtaken");
-            $this->location = "index.php?error=emailtaken";
+            $this->err = "This email is already registered";
             // exit();
             return;
         }

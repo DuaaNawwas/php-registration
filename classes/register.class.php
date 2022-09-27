@@ -4,6 +4,7 @@
 class Register extends Dbh
 {
     public $location;
+    public $err;
 
     protected function setUser($fullName, $email, $password, $dob, $phone)
     {
@@ -17,9 +18,9 @@ class Register extends Dbh
         if (!$stmt->execute(array($fullName, $email, $dob, $phone, $hashedpwd))) {
             $stmt = null;
             // header("location: ../index.php?error=stmtfailed");
-            $this->location = "index.php?error=stmtfailed";
-            // exit();
-            return;
+            $this->err = "statement failed";
+            exit();
+            // return;
         }
 
 
@@ -34,9 +35,9 @@ class Register extends Dbh
         if (!$stmt->execute(array($email))) {
             $stmt = null;
             // header("location: ../index.php?error=stmtfailed");
-            $this->location = "index.php?error=stmtfailed";
-            // exit();
-            return;
+            $this->err = "statement failed";
+            exit();
+            // return;
         }
 
 
@@ -57,9 +58,9 @@ class Register extends Dbh
         if (!$stmt->execute(array($email))) {
             $stmt = null;
             // header("location: ../index.php?error=stmtfailed");
-            $this->location = "index.php?error=stmtfailed";
-            // exit();
-            return;
+            $this->err = "statement failed";
+            exit();
+            // return;
         }
 
 
@@ -69,6 +70,6 @@ class Register extends Dbh
         session_start();
         $_SESSION['email'] = $user[0]['email'];
 
-        // $stmt = null;
+        $stmt = null;
     }
 }

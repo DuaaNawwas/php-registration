@@ -230,6 +230,12 @@ form.addEventListener("submit", function (e) {
 			body: `fullName=${fullName}&emailValue=${emailValue}&phoneValue=${phoneValue}&dobValue=${dobValue}&passwordValue=${passwordValue}`,
 		})
 			.then((response) => response.text())
-			.then((res) => (location.href = res));
+			.then((res) => {
+				if (res == "welcome.php") {
+					location.href = res;
+				} else {
+					alert(res);
+				}
+			});
 	}
 });

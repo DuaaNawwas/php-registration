@@ -17,7 +17,12 @@ $register = new RegisterContr($fullName, $email, $password, $dob, $phone);
 // run error handlers and user register
 $register->registerUser();
 
-// Send the user to welcome page
-// use echo to send it as a response to js
+if ($register->err) {
+    echo $register->err;
+} else {
 
-echo $register->location;
+    // Send the user to welcome page
+    // use echo to send it as a response to js
+
+    echo $register->location;
+}

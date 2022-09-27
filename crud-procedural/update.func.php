@@ -19,7 +19,12 @@ try {
         PASSWORD_DEFAULT
     );
 
-    $sql = "UPDATE users SET fullname='$fullname', email='$email', phone='$phone', dob='$dob', user_pwd='$hashedpwd',  role='$role' WHERE userid=$userid";
+    if ($password == "") {
+        $sql = "UPDATE users SET fullname='$fullname', email='$email', phone='$phone', dob='$dob',  role='$role' WHERE userid=$userid";
+    } else {
+
+        $sql = "UPDATE users SET fullname='$fullname', email='$email', phone='$phone', dob='$dob', user_pwd='$hashedpwd',  role='$role' WHERE userid=$userid";
+    }
 
     $stmt = $conn->prepare($sql);
 
